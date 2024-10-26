@@ -1,25 +1,20 @@
-name: CI Pipeline
-
+name: Run Python Script on Push
 on:
   push:
     branches:
-      - main
-
+      
+main
 jobs:
-  build:
+  run-script:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
+      
+name: Checkout the repository
+      uses: actions/checkout@v3
+name: Set up Python
+uses: actions/setup-python@v4
+with:
+  python-version: '3.11'
+name: Run Python script
+run: |
+  python main.py
